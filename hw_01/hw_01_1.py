@@ -3,23 +3,14 @@
 Выполнить над числом 5 побитовый сдвиг вправо и влево на два знака.
 '''
 
-
-def print_expression_result(expr):
-    result = eval(expr)
-    print(f'{expr}\t=  {result} ({bin_str(result)})')
-
-
-def bin_str(n):
-    return bin(n)[2:]
-
-
 a = 5
 b = 6
-expressions = ['a | b', 'a & b', 'a ^ b', 'a >> 2', 'a << 2']
 
-print(f'a\t\t=  {a} ({bin_str(a)})')
-print(f'b\t\t=  {b} ({bin_str(b)})')
+print(f'a\t\t=  {a} ({bin(a)})')
+print(f'b\t\t=  {b} ({bin(b)})')
 print()
-
-for e in expressions:
-    print_expression_result(e)
+print(f'a OR b\t=  {a | b} ({bin(a | b)})')
+print(f'a AND b\t=  {a & b} ({bin(a & b)})')
+print(f'a XOR b\t=  {a ^ b} ({bin(a ^ b)})')
+print(f'a >> 2\t=  {a >> 2} ({bin(a >> 2)})')
+print(f'a << 2\t=  {a << 2} ({bin(a << 2)})')
