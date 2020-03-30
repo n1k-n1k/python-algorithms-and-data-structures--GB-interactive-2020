@@ -4,13 +4,22 @@
 
 from random import randint
 
-
-source = [randint(0, randint(0, 10)) for _ in range(randint(10, 50))]
+source = [randint(0, randint(0, 30)) for _ in range(randint(10, 50))]
 print(f'source list:\t\t{source}')
 
-count = {}
-for n in source:
-    count[n] = count.get(n, 0) + 1
+if len(source) == len(set(source)):
+    print('All nums in source list are different')
 
-s = sorted(count.items(), key=lambda x: x[1], reverse=True)
-print(f'most common num:\t{s[0][0]}')
+else:
+    counter = {}
+    for n in source:
+        counter[n] = counter.get(n, 0) + 1
+
+    max_count, max_item = tuple(counter.items())[0]
+
+    for item, count in counter.items():
+        if count > max_count:
+            max_count = count
+            max_item = item
+
+    print(f'most common num:\t{max_item}')
