@@ -5,7 +5,7 @@
 """
 
 count = {}
-for i in range(2, 99):
+for i in range(2, 100):
     for j in range(2, 10):
         if i % j == 0:
             count[j] = count.get(j, 0) + 1
