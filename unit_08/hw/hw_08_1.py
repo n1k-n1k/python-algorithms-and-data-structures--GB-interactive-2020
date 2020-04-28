@@ -7,15 +7,15 @@
 
 
 def handshakes_count(n):
-    edges = [i for i in range(1, n + 1)]  # вершины графа - люди с номерами от 1 до n включительно
-    verts = []  # рёбра графа - уникальные урукопожатия
+    nodes = [i for i in range(1, n + 1)]  # вершины графа - люди с номерами от 1 до n включительно
+    edges = []  # рёбра графа - уникальные урукопожатия
 
-    for i in edges:
+    for i in nodes:
         for j in range(i + 1, n + 1):
-            verts.append((i, j))
+            edges.append((i, j))
 
-    print(f'Количество рукопожатий: {len(verts)}')
-    print(f'Пары рукопожатий: {verts}')
+    print(f'Количество рукопожатий: {len(edges)}')
+    print(f'Пары рукопожатий: {edges}')
 
 
 n = int(input('Веедите количество людей: '))
